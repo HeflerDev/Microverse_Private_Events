@@ -1,0 +1,9 @@
+<h1>Events#new</h1>
+<br>
+<%= form_for(:event,url: host_path) do |form| %>
+  <%=form.label(:description)%>
+  <br>
+  <%=form.text_area(:description)%>
+  <br>
+  <%=form.submit%>
+<%end%>
