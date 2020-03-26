@@ -1,0 +1,8 @@
+<h1>Sessions#new</h1>
+<br>
+<%= form_for(:session, url: login_path) do |form| %>
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+  <br>
+  <%= form.submit %>
+<%end%>
