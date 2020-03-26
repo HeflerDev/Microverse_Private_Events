@@ -1,0 +1,13 @@
+<h1>Users#new</h1>
+  <br>
+<%= form_for(@user) do |form| %>
+
+  <%= form.label(:name)%>
+  <%= form.text_field(:name)%>
+  <br>
+  <%= form.label(:email)%>
+  <%= form.text_field(:email) %>
+  <br>
+  <%= form.submit %>
+  <br>
+<%end%>
