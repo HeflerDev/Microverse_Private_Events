@@ -1,10 +1,9 @@
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
-  def create 
+  def create
     user = User.find_by(email: params[:session][:email])
-    if user 
+    if user
       log_in(user)
       redirect_to(user)
     else
@@ -12,6 +11,5 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy
-  end
+  def destroy; end
 end
