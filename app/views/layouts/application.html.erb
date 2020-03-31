@@ -10,6 +10,14 @@
   </head>
 
   <body>
+  <ul>
+    <li><%= link_to "New User", signup_path %></li>
+    <li><%= link_to "User Login", login_path %></li>
+    <% if logged_in? %>
+      <li><%= link_to "Create Event", host_path %></li>
+      <li><%= link_to "Index", events_home_path %></li>
+    <%end%>
+  </ul>
     <%= yield %>
   </body>
 </html>

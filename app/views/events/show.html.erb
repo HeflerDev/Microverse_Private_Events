@@ -3,10 +3,10 @@
 <%= @event.description %>
 <br>
 <h1>Attendees</h1>
-<%= @event.each do |event| %>
+<% @event.attendees.each do |event| %>
   <br>
   <hr>
-  <%= event.attendees %>
-<%=end%>
+  <%= event %>
+<%end%>
 
 

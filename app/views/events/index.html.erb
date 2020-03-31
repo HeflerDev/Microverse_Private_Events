@@ -1,22 +1,18 @@
 
 <h2>Upcoming Events</h2>
-<% @events.each do |events| %>
   <ul>
-      <% if Event.past?(events.date) == false %>
+      <% Event.upcoming.each do |date| %>
         <li>
-          <%= events.description %>
+          <%= date.description %>
         </li>  
       <% end %>
   </ul>
-<%end%>
 
 <h2>Past Events</h2>
-<% @events.each do |events| %>
   <ul>
-      <% if Event.past?(events.date) == true %>
+      <% Event.previous.each do |date| %>
         <li>
-          <%= events.description %>
+          <%= date.description %>
         </li>  
       <% end %>
   </ul>
-<%end%>

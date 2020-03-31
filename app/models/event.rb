@@ -7,11 +7,6 @@ class Event < ApplicationRecord
   #has_many :hosts,foreign_key:'attended_event_id'
   #has_many :attendees, through: :hosts
 
-  def self.past?(date)
-      if date <= Time.now
-        return true
-      else
-        false
-      end
-  end
+  scope :upcoming, -> { where(["date > ?", DateTime.now])}
+  scope :previous, -> { where(["date <= ?", DateTime.now])}
 end
