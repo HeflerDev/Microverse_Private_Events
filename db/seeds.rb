@@ -8,4 +8,4 @@
 User.create(name:'Henry')
 Event.create(description:'Hello', user_id: 1)
 Event.create(description:'World', user_id: 1)
-User.find(1).attended_events = [Event.find(1)]
+User.find(1).attended_events << Event.find(1)
