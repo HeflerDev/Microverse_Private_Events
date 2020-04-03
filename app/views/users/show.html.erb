@@ -27,15 +27,15 @@
       <h1>User Attending Events</h1>
       <ul>
       <h2> Past Events </h2>
-        <% @past_events.each do |event| %>
+        <% @user.created_events.previous.each do |event| %>
           <li>
-            <%= event %>
+            <%= event.description %>
           </li>
         <%end%>
       <h2> Future Events </h2>
-        <% @upcoming_events.each do |event| %>
+        <% @user.created_events.upcoming.each do |event| %>
         <li>
-          <%= event %>
+          <%= event.description %>
         </li>
         <%end%>
       </ul>
