@@ -1,0 +1,12 @@
+<h3>Your Event </h3>
+<br>
+<%= @event.description %>
+<br>
+<h1>Attendees</h1>
+<% @event.attendees.each do |event| %>
+  <br>
+  <hr>
+  <%= event %>
+<%end%>
+
+

@@ -1,0 +1,44 @@
+<h1>Users#show</h1>
+
+<br>
+<%= @user.email %>
+<br>
+<%= @user.name %>
+<br>
+<table>
+  <tr>
+    <td>
+      <% if logged_in? %>
+        Logged in as: <%= current_user.name %>
+        <br>
+        <h3>Events</h3>
+        <br>
+        <% @user.created_events.each do |event| %>
+          <%= event.description %>
+          <br>
+          <hr>
+        <%end%>
+        <%else%>
+          <br>
+          <%= link_to "Login", login_path %>
+      <%end%>
+    </td>
+    <td>
+      <h1>User Attending Events</h1>
+      <ul>
+      <h2> Past Events </h2>
+        <% @user.created_events.previous.each do |event| %>
+          <li>
+            <%= event.description %>
+          </li>
+        <%end%>
+      <h2> Future Events </h2>
+        <% @user.created_events.upcoming.each do |event| %>
+        <li>
+          <%= event.description %>
+        </li>
+        <%end%>
+      </ul>
+    </td>
+  </tr>
+</table>
